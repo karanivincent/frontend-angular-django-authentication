@@ -1,6 +1,6 @@
 <div style="text-align:center">
   <h1>
-    Lista de compras
+    Shopping list
   </h1>
 </div>
 <ul>
@@ -13,5 +13,7 @@
 <input #itemQuantity type='text' placeholder='Qtd'>
 <input #itemName type='text' placeholder='Name'>
 <button (click)="add(itemName.value, itemQuantity.value)">Add</button>
-<br>
-{{ error?.message }}
+<p>{{ error?.message }}</p>
+<p *ngIf="error">{{ error?.error | json }}</p>
+
+<button (click)="logout()">logout</button>
